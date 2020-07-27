@@ -1,0 +1,30 @@
+.placesListContainer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  text-align: center;
+  justify-content: center;
+}
+
+.placesListContainer div {
+  flex: 1 1 150px;
+  margin: 1% 1% 1% 1%;
+  text-align: center;
+}
+
+.mapContainer {
+  height: 15rem;
+  width: 100%;
+}
+
+.placesListContainer h1 {
+  /* margin-top: 1%;
+  padding-top: 1%; */
+  /* width: 100%; */
+}
+
+@media (max-width: 768px) {
+  .placesListContainer {
+    /* flex-direction: column; */
+  }
+}

@@ -1,0 +1,46 @@
+.mainNavButton {
+  width: 3rem;
+  height: 3rem;
+  background: transparent;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-right: 2rem;
+  cursor: pointer;
+  margin: 0 2% 0 20%;
+}
+
+.mainNavButton span {
+  display: block;
+  width: 3.2rem;
+  height: 2.5px;
+  background: white;
+}
+
+.mainNavTitle {
+  color: white;
+}
+
+.mainNavTitle a {
+  text-decoration: none;
+  color: white;
+}
+
+.mainNavHeaderNav {
+  display: none;
+}
+
+.mainNavSideDrawer {
+  height: 100%;
+}
+
+@media (min-width: 769px) {
+  .mainNavButton {
+    display: none;
+  }
+
+  .mainNavHeaderNav {
+    display: block;
+  }
+}

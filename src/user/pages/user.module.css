@@ -1,0 +1,83 @@
+/* USER */
+.userTitle {
+  display: flex;
+  /* flex-direction: row-reverse; */
+}
+
+.userTitle p {
+  width: 100%;
+  margin: 1% 1% 1% 1%;
+  padding: 5px 5px 5px 5px;
+}
+
+.userTitle a {
+  text-decoration: none;
+}
+
+.userTitle a p {
+  color: rgba(79, 70, 206, 0.767);
+  background-color: #fff;
+  border: 1px solid rgba(79, 70, 206, 0.767);
+  border-radius: 5px;
+}
+
+.userContainer {
+  direction: rtl;
+  margin: 7% 5% 7% 5%;
+}
+
+.userInfo {
+  text-align: right;
+  margin-top: 10%;
+}
+
+.boxGoogleMaps {
+  margin: 2% 2% 2% 2%;
+}
+
+.boxGoogleMaps a {
+  text-decoration: none;
+  color: rgba(211, 62, 35, 0.514);
+  background-color: #fff;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10%;
+}
+
+/*QR CODE*/
+
+.qrCodeContainer {
+  padding-top: 25%;
+  padding-bottom: 25%;
+  margin: 2% -18% 2% -18%;
+}
+
+.qrCodeContainer {
+  display: flex;
+  flex-direction: column;
+  direction: rtl;
+  text-align: center;
+  font: 1.2rem alef;
+}
+
+.qrCodeContainer div {
+  margin: 1% 1% 6% 1%;
+}
+
+.qrCodeContainer input {
+  display: none;
+}
+
+.qrCodeContainer label {
+  color: black;
+  padding: 3px 23px 3px 23px;
+  top: 10px;
+  border: 1px solid #0a1f44;
+  border-radius: 5px;
+}
+
+.qrCodeContainer label:hover {
+  background-color: rgba(211, 62, 35, 0.514);
+}
+
+/* USER */

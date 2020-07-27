@@ -1,0 +1,27 @@
+.sideDrawer {
+  margin: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 99;
+  height: 100vh;
+  background: rgb(211, 61, 35);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+}
+
+@media (max-width: 768px) {
+  .sideDrawer {
+    width: 35%;
+  }
+}
+
+@media (max-width: 425px) {
+  .sideDrawer {
+    width: 40%;
+  }
+}
+@media (max-width: 320px) {
+  .sideDrawer {
+    width: 45%;
+  }
+}
