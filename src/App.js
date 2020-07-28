@@ -1,4 +1,5 @@
 import React from "react";
+<<<<<<< HEAD
 import {
   BrowserRouter as Router,
   Route,
@@ -35,6 +36,11 @@ const App = () => {
       </main>
     </Router>
   );
+=======
+
+const App = () => {
+  return <div className="App">text</div>;
+>>>>>>> 262f9a6f0f6b5962283e8108765c2a05bf0fa536
 };
 
 export default App;

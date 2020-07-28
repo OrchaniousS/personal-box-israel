@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # personal-box-israel
 =======
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -76,3 +77,8 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 
 New isralian startup which offer personal and private box containers which you can share with others
 >>>>>>> 262f9a6... firstcommit
+=======
+## Description
+
+New isralian startup which offer personal and private box containers which you can share with others
+>>>>>>> 262f9a6f0f6b5962283e8108765c2a05bf0fa536
