@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import QrReader from "react-qr-reader";
 
+import { firebaseDB } from "../../shared/firebase";
 import styles from "./user.module.css";
 
 const User = (porps) => {
@@ -50,6 +51,25 @@ const User = (porps) => {
     },
   ];
 
+  // const userName = (
+  //   <React.Fragment>
+  //     {firebaseDB
+  //       .ref("users")
+  //       .once("value")
+  //       .then((snapshot) => {
+  //         const users = [];
+
+  //         snapshot.forEach((childSnapshot) => {
+  //           users.push({
+  //             id: childSnapshot.key,
+  //             name: childSnapshot.val().username,
+  //           });
+  //         });
+  //         console.log(users);
+  //       })}
+  //   </React.Fragment>
+  // );
+
   const userInfo = (
     <div className={styles.userInfo}>
       {/* <h1> פרטי המשתמש</h1> */}
@@ -72,6 +92,7 @@ const User = (porps) => {
   return (
     <div className={styles.userContainer}>
       {userPageTitle}
+      {/* {userName} */}
       {userInfo}
       {
         <div className={styles.qrCodeContainer}>

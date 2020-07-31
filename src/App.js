@@ -1,11 +1,11 @@
 import React from "react";
-<<<<<<< HEAD
 import {
   BrowserRouter as Router,
   Route,
   Redirect,
   Switch,
 } from "react-router-dom";
+import "./shared/firebase";
 
 import Admin from "./admin/pages/admin";
 import User from "./user/pages/user";
@@ -36,11 +36,6 @@ const App = () => {
       </main>
     </Router>
   );
-=======
-
-const App = () => {
-  return <div className="App">text</div>;
->>>>>>> 262f9a6f0f6b5962283e8108765c2a05bf0fa536
 };
 
 export default App;
