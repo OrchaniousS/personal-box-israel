@@ -5,14 +5,15 @@ import {
   Redirect,
   Switch,
 } from "react-router-dom";
-import "./shared/firebase";
+import "./firebase";
 
 import Admin from "./admin/pages/admin";
 import User from "./user/pages/user";
-// import Auth from "./auth/pages/auth";
-import Auth from "./user/pages/auth";
+import Auth from "./auth/pages/auth";
+// import Auth from "./user/pages/auth";
 import Places from "./places/pages/places";
 import Home from "./home/pages/home";
+// import Appauth from "./Components/Application";
 
 import MainNav from "./shared/components/Navigation/mainNav";
 import Card from "./shared/components/Card";

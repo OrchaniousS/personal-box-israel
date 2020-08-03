@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
+import User from "../../../auth/pages/auth";
 import styles from "./navLinks.module.css";
 
 const NavLinks = (props) => {
@@ -18,8 +19,9 @@ const NavLinks = (props) => {
         <NavLink to="/user/:uid">הפרופיל שלי</NavLink>
       </li>
       <li>
-        <NavLink to="/auth">התחברות</NavLink>
+        <NavLink to="/auth"> {User ? "התחברות" : "התנתקות"}</NavLink>
       </li>
+      {/*if usertype is admin = show admin login*/}
     </ul>
   );
 };

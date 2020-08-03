@@ -24,6 +24,10 @@ body {
   background-repeat: no-repeat;
 }
 
+.mainContainer {
+  /* margin: 8% 8% 8% 8%; */
+}
+
 p {
   /* margin-top: 10px; */
   text-transform: uppercase;
