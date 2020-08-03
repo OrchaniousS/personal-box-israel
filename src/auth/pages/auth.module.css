@@ -7,18 +7,24 @@ body {
   flex-direction: column;
 }
 
-.phaseContainer,
-.inputContainer div {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  margin: 0% 31% 0% 29%;
-  font-weight: 800;
-  font: 1.8rem alef;
+form,
+label {
+  display: contents;
 }
 
-.inputContainer label {
-  display: contents;
+.titleUserSign {
+  font-size: 1.3rem;
+  text-align: center;
+  color: rgba(211, 62, 35, 0.514);
+  margin-bottom: 5%;
+}
+
+.inputContainer div {
+  /* width: 100%; */
+  margin: 0 25% 0 25%;
+  font-weight: 800;
+  align-content: center;
+  font: 1.8rem alef;
 }
 
 .phaseContainer div {
@@ -28,18 +34,14 @@ body {
   margin: 25% 10% 12% 15%;
 }
 
+.phaseContainer div:hover {
+  background-color: rgba(66, 54, 236, 0.637);
+}
+
 .phaseContainer a,
 .inputContainer a {
   text-decoration: none;
   color: rgb(255, 255, 255);
-}
-
-.inputContainer div:hover {
-  background-color: rgba(211, 62, 35, 0.514);
-}
-
-.phaseContainer div:hover {
-  background-color: rgba(66, 54, 236, 0.637);
 }
 
 .inputContainer {
@@ -58,10 +60,14 @@ body {
   outline: none;
 }
 
-.inputContainer div {
+.inputContainer button {
   color: #fff;
   background-color: dimgrey;
   border-radius: 10px;
-  /* padding: 3% 10% 3% 10%; */
+  padding: 11px 10% 11px 10%;
   margin: 7% 10% 6% 15%;
+}
+
+.inputContainer button:hover {
+  background-color: rgba(211, 62, 35, 0.514);
 }

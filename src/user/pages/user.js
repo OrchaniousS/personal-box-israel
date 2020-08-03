@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import QrReader from "react-qr-reader";
 
-import { firebaseDB } from "../../firebase";
+// import { firebaseDB } from "../../firebase";
 import styles from "./user.module.css";
 
 const User = (porps) => {

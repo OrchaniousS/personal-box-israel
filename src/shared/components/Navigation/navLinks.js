@@ -16,10 +16,12 @@ const NavLinks = (props) => {
         <NavLink to="/places">מיקומי הלוקר</NavLink>
       </li>
       <li>
-        <NavLink to="/user/:uid">הפרופיל שלי</NavLink>
-      </li>
-      <li>
-        <NavLink to="/auth"> {User ? "התחברות" : "התנתקות"}</NavLink>
+        {User ? (
+          <NavLink to="/auth">התחברות/הרשמה</NavLink>
+        ) : (
+          <NavLink to="/user">הפרופיל שלי</NavLink>
+        )}
+        {/* <NavLink to="/auth"> {User ? "התחברות" : "התנתקות"}</NavLink> */}
       </li>
       {/*if usertype is admin = show admin login*/}
     </ul>
