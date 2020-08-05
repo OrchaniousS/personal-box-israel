@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import { UserContext } from "../../auth/providers/userProvider";
+import { auth } from "../../firebase";
 import QrReader from "react-qr-reader";
 
-// import { firebaseDB } from "../../firebase";
 import styles from "./user.module.css";
 
 const User = (porps) => {
+  const user = useContext(UserContext);
+  const { phone, lastName, firstName, email } = user;
   const [result, setResult] = useState("עדיין לא נסרק");
   const [isQRcodeActive, setqrcodeActive] = useState(false);
 
@@ -29,6 +32,15 @@ const User = (porps) => {
     </React.Fragment>
   );
 
+  // const demoUser = [
+  //   {
+  //     phoneNumber: "enteredText",
+  //     firstName: "enteredText",
+  //     lastName: "Hans",
+  //     email: "superHans@gmail.com",
+  //   },
+  // ];
+
   const userPageTitle = (
     <div className={styles.userTitle}>
       <div>
@@ -36,50 +48,26 @@ const User = (porps) => {
       </div>
       <div>
         <Link to="/">
-          <p>התנתקות</p>
+          <button
+            onClick={() => {
+              auth.signOut();
+            }}
+          >
+            <p>התנתקות</p>
+          </button>
         </Link>
       </div>
     </div>
   );
 
-  const demoUser = [
-    {
-      phoneNumber: "enteredText",
-      firstName: "enteredText",
-      lastName: "Hans",
-      email: "superHans@gmail.com",
-    },
-  ];
-
-  // const userName = (
-  //   <React.Fragment>
-  //     {firebaseDB
-  //       .ref("users")
-  //       .once("value")
-  //       .then((snapshot) => {
-  //         const users = [];
-
-  //         snapshot.forEach((childSnapshot) => {
-  //           users.push({
-  //             id: childSnapshot.key,
-  //             name: childSnapshot.val().username,
-  //           });
-  //         });
-  //         console.log(users);
-  //       })}
-  //   </React.Fragment>
-  // );
-
   const userInfo = (
     <div className={styles.userInfo}>
-      {/* <h1> פרטי המשתמש</h1> */}
-      {demoUser.map(({ phoneNumber, firstName, lastName, email }) => (
-        <div key={Math.random().toString()}>
-          <h2>{firstName + " " + lastName}</h2>
-          <div>מספר הטלפון: {phoneNumber}</div>
-          <div>אימייל: {email}</div>
-        </div>
-      ))}
+      <h1> פרטי המשתמש</h1>
+      <div key={Math.random().toString()}>
+        <h2>{firstName + " " + lastName}</h2>
+        <div>מספר הטלפון: {phone}</div>
+        <div>אימייל: {email}</div>
+      </div>
     </div>
   );
 
@@ -92,7 +80,6 @@ const User = (porps) => {
   return (
     <div className={styles.userContainer}>
       {userPageTitle}
-      {/* {userName} */}
       {userInfo}
       {
         <div className={styles.qrCodeContainer}>
@@ -111,21 +98,3 @@ const User = (porps) => {
 };
 
 export default User;
-
-// const qrCodeCamera = (
-//   <div className={styles.qrCodeContainer}>
-//     <div> סרוק את קוד הQR כאן: </div>
-//     <div>
-//       <input
-//         title="f"
-//         placeholder="צלם תמונה"
-//         id="qrCODE"
-//         name="QRcode"
-//         type="file"
-//         accept="image/*"
-//         capture="camera"
-//       />
-//       <label htmlFor="qrCODE">הפעל את המצלמה</label>
-//     </div>
-//   </div>
-// );

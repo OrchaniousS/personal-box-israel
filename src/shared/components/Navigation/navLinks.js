@@ -17,7 +17,7 @@ const NavLinks = (props) => {
       </li>
       <li>
         {User ? (
-          <NavLink to="/auth">התחברות/הרשמה</NavLink>
+          <NavLink to="/signin">התחברות</NavLink>
         ) : (
           <NavLink to="/user">הפרופיל שלי</NavLink>
         )}

@@ -1,5 +1,6 @@
 .mainContainer,
 body {
+  direction: rtl;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -10,9 +11,14 @@ body {
 form,
 label {
   display: contents;
+  /* border: 0 solid black; */
 }
 
-.titleUserSign {
+.formContainer {
+  text-align: -webkit-center;
+}
+
+.titleUser {
   font-size: 1.3rem;
   text-align: center;
   color: rgba(211, 62, 35, 0.514);
@@ -21,10 +27,10 @@ label {
 
 .inputContainer div {
   /* width: 100%; */
-  margin: 0 25% 0 25%;
+  /* margin: 0 25% 0 25%; */
+  font: 1.1rem alef;
   font-weight: 800;
   align-content: center;
-  font: 1.8rem alef;
 }
 
 .phaseContainer div {
@@ -49,25 +55,46 @@ label {
   flex-direction: column;
 }
 
-.inputContainer input {
+.inputContainer input,
+.passwordResetContainer input {
   margin: 1% 1% 1% 1%;
   padding: 2% 2% 2% 2%;
   border-radius: 15px;
   border-color: rgba(211, 62, 35, 0.514);
 }
 
-.inputContainer input:focus {
+.inputContainer input:focus,
+.passwordResetContainer input:focus {
   outline: none;
 }
 
-.inputContainer button {
+.inputContainer button,
+.passwordResetContainer button {
   color: #fff;
-  background-color: dimgrey;
+  background-color: #68d391;
   border-radius: 10px;
-  padding: 11px 10% 11px 10%;
-  margin: 7% 10% 6% 15%;
+  padding: 11px 15% 11px 15%;
+  margin-top: 12%;
+  margin-bottom: 5%;
 }
 
-.inputContainer button:hover {
-  background-color: rgba(211, 62, 35, 0.514);
+.inputContainer button:hover,
+.passwordResetContainer button:hover {
+  background-color: rgb(3, 70, 66);
+}
+
+.loginContainer,
+.passwordResetContainer {
+  width: 100%;
+  text-align-last: center;
+}
+
+.loginContainer button {
+  background-color: #f56565;
+}
+
+.loginContainer a,
+.passwordResetContainer a {
+  text-decoration: none;
+  color: #4299e1;
 }

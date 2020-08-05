@@ -1,6 +1,7 @@
 import firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
+import { functions } from "firebase";
 
 const config = {
   apiKey: "AIzaSyBvJy0n21xjxodduh9GBNhelH2xWe-3XIA",
@@ -15,13 +16,51 @@ const config = {
 
 firebase.initializeApp(config);
 
-const auth = firebase.auth();
-
 const firestore = firebase.firestore();
 
-// const firebaseDB = firebase.database();
+const auth = firebase.auth();
+const provider = new firebase.auth.GoogleAuthProvider();
+export const signInWithGoogle = () => {
+  auth.signInWithPopup(provider);
+};
+
+export const generateUserDocument = async (user, additionalData) => {
+  if (!user) return;
+  const userRef = firestore.doc(`users/${user.uid}`);
+  const snapshot = await userRef.get();
+  if (!snapshot.exists) {
+    const { email, firstName, lastName, phone } = user;
+    try {
+      await userRef.set({
+        firstName,
+        lastName,
+        phone,
+        email,
+        ...additionalData,
+      });
+    } catch (error) {
+      console.error("Error creating user document", error);
+    }
+  }
+  return getUserDocument(user.uid);
+};
+
+const getUserDocument = async (uid) => {
+  if (!uid) return null;
+  try {
+    const userDocument = await firestore.doc(`users/${uid}`).get();
+    return {
+      uid,
+      ...userDocument.data(),
+    };
+  } catch (error) {
+    console.error("Error fetching user", error);
+  }
+};
 
 export { firebase, auth, firestore };
+
+// const firebaseDB = firebase.database();
 // firebaseDB
 //   .ref("users")
 //   .push({ username: "tair", password: "ra2d", testChange: "testFailed2" });
