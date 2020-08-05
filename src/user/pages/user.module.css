@@ -1,7 +1,12 @@
 /* USER */
 .userTitle {
   display: flex;
+  flex: 1 1 150px;
   /* flex-direction: row-reverse; */
+}
+
+.userTitle button {
+  border: 0;
 }
 
 .userTitle p {
@@ -23,12 +28,17 @@
 
 .userContainer {
   direction: rtl;
-  margin: 7% 5% 7% 5%;
+  text-align-last: center;
+  /* margin: 7% 5% 7% 5%; */
 }
 
 .userInfo {
   text-align: right;
   margin-top: 10%;
+}
+
+.userInfo h1 {
+  text-align: -webkit-center;
 }
 
 .boxGoogleMaps {

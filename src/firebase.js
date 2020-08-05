@@ -1,7 +1,7 @@
 import firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/firestore";
-import { functions } from "firebase";
+// import { functions } from "firebase";
 
 const config = {
   apiKey: "AIzaSyBvJy0n21xjxodduh9GBNhelH2xWe-3XIA",
@@ -16,7 +16,9 @@ const config = {
 
 firebase.initializeApp(config);
 
-const firestore = firebase.firestore();
+const db = firebase.firestore();
+
+// db.settings({ timestampsInSnapshots: true });
 
 const auth = firebase.auth();
 const provider = new firebase.auth.GoogleAuthProvider();
@@ -26,15 +28,15 @@ export const signInWithGoogle = () => {
 
 export const generateUserDocument = async (user, additionalData) => {
   if (!user) return;
-  const userRef = firestore.doc(`users/${user.uid}`);
+  const userRef = db.doc(`users/${user.uid}`);
   const snapshot = await userRef.get();
   if (!snapshot.exists) {
-    const { email, firstName, lastName, phone } = user;
+    const { phone, lastName, firstName, email } = user;
     try {
       await userRef.set({
-        firstName,
-        lastName,
         phone,
+        lastName,
+        firstName,
         email,
         ...additionalData,
       });
@@ -48,7 +50,7 @@ export const generateUserDocument = async (user, additionalData) => {
 const getUserDocument = async (uid) => {
   if (!uid) return null;
   try {
-    const userDocument = await firestore.doc(`users/${uid}`).get();
+    const userDocument = await db.doc(`users/${uid}`).get();
     return {
       uid,
       ...userDocument.data(),
@@ -58,7 +60,7 @@ const getUserDocument = async (uid) => {
   }
 };
 
-export { firebase, auth, firestore };
+export { firebase, auth };
 
 // const firebaseDB = firebase.database();
 // firebaseDB

@@ -12,6 +12,8 @@ const User = (porps) => {
   const [result, setResult] = useState("עדיין לא נסרק");
   const [isQRcodeActive, setqrcodeActive] = useState(false);
 
+  // console.log(user);
+
   const handleQrScan = (data) => {
     data && setResult(data);
   };
@@ -31,15 +33,6 @@ const User = (porps) => {
       <p>{result}</p>
     </React.Fragment>
   );
-
-  // const demoUser = [
-  //   {
-  //     phoneNumber: "enteredText",
-  //     firstName: "enteredText",
-  //     lastName: "Hans",
-  //     email: "superHans@gmail.com",
-  //   },
-  // ];
 
   const userPageTitle = (
     <div className={styles.userTitle}>

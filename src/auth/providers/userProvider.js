@@ -7,14 +7,6 @@ class UserProvider extends Component {
   state = {
     user: null,
   };
-  // const [user, setUser] = useState(null);
-
-  // useEffect(() => {
-  //   auth.onAuthStateChanged(async (userAuth) => {
-  //     const user = await generateUserDocument(userAuth);
-  //     setUser(user);
-  //   });
-  // }, []);
 
   componentDidMount = async () => {
     auth.onAuthStateChanged(async (userAuth) => {

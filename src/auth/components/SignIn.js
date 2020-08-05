@@ -11,10 +11,15 @@ const SignIn = (props) => {
 
   const signInWithEmailAndPasswordHandler = (event, email, password) => {
     event.preventDefault();
-    auth.signInWithEmailAndPassword(email, password).catch((error) => {
-      setError("שגיאה בעת התחברות עם האימייל או סיסמה");
-      console.error("שגיאה בעת התחברות עם האימייל או סיסמה", error);
-    });
+    auth
+      .signInWithEmailAndPassword(email, password)
+      .then(() => {
+        return <Link to="/users" />;
+      })
+      .catch((error) => {
+        setError("שגיאה בעת התחברות עם האימייל או סיסמה");
+        console.error("שגיאה בעת התחברות עם האימייל או סיסמה", error);
+      });
   };
 
   const onChangeHandler = (event) => {
@@ -40,19 +45,22 @@ const SignIn = (props) => {
             <label htmlFor={input.label}></label>
             <input
               id={input.label}
+              type={input.label}
               name={input.label}
               placeholder={input.placeHolder}
               onChange={(event) => onChangeHandler(event)}
             />
           </React.Fragment>
         ))}
-        <button
-          onClick={(event) => {
-            signInWithEmailAndPasswordHandler(event, email, password);
-          }}
-        >
-          התחבר
-        </button>
+        <Link to="/users">
+          <button
+            onClick={(event) => {
+              signInWithEmailAndPasswordHandler(event, email, password);
+            }}
+          >
+            התחבר
+          </button>
+        </Link>
       </form>
       <div className={styles.loginContainer}>
         <div>או</div>
