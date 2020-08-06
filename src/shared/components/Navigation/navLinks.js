@@ -1,11 +1,10 @@
 import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
+
 import { UserContext } from "../../../auth/providers/userProvider";
+import { auth } from "../../../firebase";
 
-// import User from "../../../auth/pages/auth";
 import styles from "./navLinks.module.css";
-
-// export const User = null;
 
 const NavLinks = (props) => {
   const User = useContext(UserContext);
@@ -19,16 +18,27 @@ const NavLinks = (props) => {
       <li>
         <NavLink to="/places">מיקומי הלוקר</NavLink>
       </li>
-      <li>
+      <React.Fragment>
         {!User ? (
           <NavLink to="/signin">התחברות</NavLink>
         ) : (
-          <NavLink to="/users">הפרופיל שלי</NavLink>
+          <React.Fragment>
+            <li>
+              <NavLink to="/users">הפרופיל שלי</NavLink>
+            </li>
+            <li>
+              <NavLink
+                onClick={() => {
+                  auth.signOut();
+                }}
+                to="/"
+              >
+                התנתקות
+              </NavLink>
+            </li>
+          </React.Fragment>
         )}
-
-        {/* <NavLink to="/auth"> {User ? "התחברות" : "התנתקות"}</NavLink> */}
-      </li>
-      {/*if usertype is admin = show admin login*/}
+      </React.Fragment>
     </ul>
   );
 };

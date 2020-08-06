@@ -14,7 +14,7 @@ const SignIn = (props) => {
     auth
       .signInWithEmailAndPassword(email, password)
       .then(() => {
-        return <Link to="/users" />;
+        window.location = "/";
       })
       .catch((error) => {
         setError("שגיאה בעת התחברות עם האימייל או סיסמה");
@@ -52,25 +52,24 @@ const SignIn = (props) => {
             />
           </React.Fragment>
         ))}
-        <Link to="/users">
-          <button
-            onClick={(event) => {
-              signInWithEmailAndPasswordHandler(event, email, password);
-            }}
-          >
-            התחבר
-          </button>
-        </Link>
+
+        <button
+          onClick={async (event) => {
+            signInWithEmailAndPasswordHandler(event, email, password);
+          }}
+        >
+          התחבר
+        </button>
       </form>
       <div className={styles.loginContainer}>
-        <div>או</div>
+        {/* <div>או</div>
         <button
           onClick={() => {
             signInWithGoogle();
           }}
         >
           התחבר עם גוגל
-        </button>
+        </button> */}
         <div>
           אין לך משתמש? <Link to="signUp">הרשם כאן</Link>
         </div>

@@ -80,7 +80,7 @@ const SignUp = (props) => {
         </button>
       </form>
       <div className={styles.loginContainer}>
-        <div>או</div>
+        {/* <div>או</div>
         <button
           onClick={() => {
             try {
@@ -91,7 +91,7 @@ const SignUp = (props) => {
           }}
         >
           התחבר עם גוגל
-        </button>
+        </button> */}
         <div>
           ישלך משתמש? <Link to="signIn">התחבר כאן</Link>
         </div>
