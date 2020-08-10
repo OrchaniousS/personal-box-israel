@@ -1,4 +1,5 @@
 .cardContainer {
+  /* font-size: 1.1rem; */
   outline: none;
   padding: 20px 7%;
   border-radius: 20px;
@@ -14,6 +15,21 @@
 }
 
 main {
+  min-width: 350px;
   /* width: 100%;
   height: 100%; */
+}
+
+.cardContainerChild {
+  font-size: 1.4rem;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  margin: 25% 0;
+  padding: 1% 0;
+}
+
+.cardContainerChild a {
+  text-decoration: none;
+  color: #c94a27c4;
 }

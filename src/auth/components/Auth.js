@@ -27,7 +27,7 @@ function Auth() {
       <MainNav />
       <Switch>
         <div className={styles.app}>
-          <Card>
+          <Card type="father">
             {user ? (
               <React.Fragment>
                 <Route path="/users" component={UserProfile} />

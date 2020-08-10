@@ -6,30 +6,35 @@
   box-sizing: border-box;
 }
 
-html,
-body,
 #root {
-  font: 0.9rem alef;
-  /* background: #0a1f44; */
-  color: #1e2432;
-  /* height: 100%; */
-  margin: 0;
+  margin: 8% 0;
 }
 
+html,
 body {
-  /* background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.418)),
-    url("./shared/images/bg.jpg"); */
-  /* background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat; */
+  font: alef;
+  /* background: #0a1f44; */
+  color: #1e2432;
+  /* margin: 8% 0; */
+  /* height: 1450px; */
+  /* width: 100%; */
+  /* margin: -2% 0; */
+}
+
+html {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.418)),
+    url("/images/bg.jpg");
+  background-size: auto;
+  background-position: 100%;
+  background-repeat: unset;
   background-color: rgba(65, 43, 32, 0.39);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 .app {
-  /* margin: 0 50% 0 50%;
-  padding: 2% 8%;
+  /* margin: 18% 0; */
+  /* padding: 2% 8%;
   width: 100%;
   height: 100%; */
 }
