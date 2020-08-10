@@ -55,11 +55,16 @@ const SignUp = (props) => {
   };
 
   const registerInputs = [
-    { placeHolder: "אימייל", label: "email" },
-    { placeHolder: "סיסמה", label: "password" },
-    { placeHolder: "שם פרטי", label: "firstName" },
-    { placeHolder: "שם משפחה", label: "lastName" },
-    { placeHolder: "מספר טלפון", label: "phoneNumber" },
+    { placeHolder: "אימייל", label: "email", type: "email" },
+    { placeHolder: "סיסמה", label: "password", type: "password" },
+    { placeHolder: "שם פרטי", label: "firstName", type: "text" },
+    { placeHolder: "שם משפחה", label: "lastName", type: "text" },
+    {
+      placeHolder: "מספר טלפון",
+      label: "phoneNumber",
+      type: "tel",
+      pattern: "[0-9]{3}-[0-9]{2}-[0-9]{3}",
+    },
   ];
 
   const registerContainer = (
@@ -70,6 +75,8 @@ const SignUp = (props) => {
             <input
               id={input.label}
               name={input.label}
+              type={input.type}
+              pattern={input.patten && input.patten}
               placeholder={input.placeHolder}
               onChange={(event) => onChangeHandler(event)}
             ></input>
