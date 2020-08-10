@@ -28,12 +28,15 @@ export const UserContext = createContext({ user: null });
 
 const UserProvider = (props) => {
   const [user, setUser] = useState(null);
+  const [pending, setPending] = useState(false);
 
   useEffect(() => {
     auth.onAuthStateChanged(async (userAuth) => {
       setUser(await generateUserDocument(userAuth));
+      (await pending) === true ? setPending(false) : setPending(true);
     });
-  });
+    pending && window.location.assign("/");
+  }, []);
 
   return (
     <UserContext.Provider value={user}>{props.children}</UserContext.Provider>

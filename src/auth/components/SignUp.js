@@ -27,7 +27,9 @@ const SignUp = (props) => {
         email,
         password
       );
-      generateUserDocument(user, { firstName, lastName, phone });
+      generateUserDocument(user, { firstName, lastName, phone }).then(() => {
+        window.location = "/";
+      });
     } catch (error) {
       setError("שגיאה בעת ההרשמה עם האימייל או סיסמה");
     }
@@ -73,10 +75,11 @@ const SignUp = (props) => {
         {registerInputs.map((input, index) => (
           <label key={index} htmlFor={input.label}>
             <input
+              required
               id={input.label}
               name={input.label}
               type={input.type}
-              pattern={input.patten && input.patten}
+              pattern={input.pattern && input.pattern}
               placeholder={input.placeHolder}
               onChange={(event) => onChangeHandler(event)}
             ></input>
@@ -85,6 +88,9 @@ const SignUp = (props) => {
         <button
           onClick={(event) => {
             createUserWithEmailAndPasswordHandler(event, email, password);
+            // setTimeout(() => {
+            //   window.location = "/";
+            // }, 1000);
           }}
         >
           הרשם
